@@ -14,6 +14,7 @@
 		A2443A5F205A0668006EB97E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2443A5D205A0668006EB97E /* LaunchScreen.storyboard */; };
 		A2443A6A205A0668006EB97E /* CanvasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2443A69205A0668006EB97E /* CanvasTests.swift */; };
 		A2443A75205A0668006EB97E /* CanvasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2443A74205A0668006EB97E /* CanvasUITests.swift */; };
+		A2443A83205A08F5006EB97E /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2443A82205A08F5006EB97E /* CanvasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A2443A70205A0668006EB97E /* CanvasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanvasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2443A74205A0668006EB97E /* CanvasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasUITests.swift; sourceTree = "<group>"; };
 		A2443A76205A0668006EB97E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2443A82205A08F5006EB97E /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				A2443A5B205A0668006EB97E /* Assets.xcassets */,
 				A2443A5D205A0668006EB97E /* LaunchScreen.storyboard */,
 				A2443A60205A0668006EB97E /* Info.plist */,
+				A2443A82205A08F5006EB97E /* CanvasViewController.swift */,
 			);
 			path = Canvas;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2443A57205A0668006EB97E /* ViewController.swift in Sources */,
+				A2443A83205A08F5006EB97E /* CanvasViewController.swift in Sources */,
 				A2443A55205A0668006EB97E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
