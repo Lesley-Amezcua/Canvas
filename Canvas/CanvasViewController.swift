@@ -28,7 +28,16 @@ class CanvasViewController: UIViewController {
         trayUp = trayView.center // The initial position of the tray
         trayDown = CGPoint(x: trayView.center.x ,y: trayView.center.y + trayDownOffset) // The position of the tray transposed down
         
-        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didDoubleTapCanvas(sender:)))
+        tapGestureRecognizer.numberOfTapsRequired = 2
+        self.view.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func didDoubleTapCanvas(sender: UITapGestureRecognizer) {
+        for case let faceView as UIImageView in self.view.subviews {
+            faceView.removeFromSuperview()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,7 +101,7 @@ class CanvasViewController: UIViewController {
         if sender.state == .began {
             let imageView = sender.view as! UIImageView
             let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(sender:)))
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap(sender:)))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didDoubleTapImage(sender:)))
             tapGestureRecognizer.numberOfTapsRequired = 2
             newlyCreatedFAce = UIImageView(image: imageView.image)
             newlyCreatedFAce.isUserInteractionEnabled = true
@@ -139,7 +148,7 @@ class CanvasViewController: UIViewController {
             }, completion: nil)
         }
     }
-    func didTap(sender: UITapGestureRecognizer) {
+    func didDoubleTapImage(sender: UITapGestureRecognizer) {
         let faceView = sender.view as! UIImageView
         faceView.removeFromSuperview()
     }
