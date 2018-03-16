@@ -22,6 +22,9 @@ class CanvasViewController: UIViewController {
     var newlyCreatedFAce: UIImageView!
     var newlyCreatedFaceOriginalCenter: CGPoint!
     
+    
+    var isArrowFacingUp = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         trayDownOffset = 160
@@ -45,30 +48,19 @@ class CanvasViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    let PI = 3.14157
-    var rot = 3.14157
-    var x = -1
-    
     @IBAction func didPanTray(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
-        var velocity = sender.velocity(in: view)
+        let velocity = sender.velocity(in: view)
         
         
         
         if sender.state == .began {
             trayOriginalCenter = trayView.center
+            isArrowFacingUp = !isArrowFacingUp
         }
         else if sender.state == .changed{
             print("change\n")
             trayView.center = CGPoint(x: trayOriginalCenter.x, y: trayOriginalCenter.y + translation.y)
-            x *= -1
-            
-            if (x < 0) {
-                rot = 0.0
-            } else {
-                rot = PI
-            }
-            
         }
         else if sender.state == .ended{
             print("end\n")
@@ -86,7 +78,12 @@ class CanvasViewController: UIViewController {
             }
             UIView.animate(withDuration:0.2, delay: 0.0,
                 options: [], animations: { () -> Void in
-                    self.downArrowImgView.transform = CGAffineTransform(rotationAngle: CGFloat(self.rot))
+                    if self.isArrowFacingUp {
+                        self.downArrowImgView.transform = CGAffineTransform(rotationAngle: .pi)
+                    } else {
+                        self.downArrowImgView.transform = CGAffineTransform.identity
+                    }
+                    
             }, completion: nil)
         }
         
