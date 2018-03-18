@@ -30,7 +30,7 @@ The following **stretch** user stories are implemented:
 - User can snap a photo to create...
 - [ ] a custom canvas background (1pt)
 - [ ] custom images in the image tray (1pt)
-- [ ] User can double tab the canvas to "reset" the Canvas (1pt)
+- [x] User can double tab the canvas to "reset" the Canvas (1pt)
 - [ ] User can triple tap an image on the canvas to see a custom animation sequence (1pt)
 - [ ] User can save an image of the canvas to the camera role (1pt)
 
